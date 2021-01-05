@@ -1,0 +1,5 @@
+To START:
+docker container run -it --name get-req ubuntu:16.04 sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+
+To FIX (in a separate terminal window):
+docker container exec get-req bash -c "apt-get -y update ; apt-get -y install curl"
