@@ -1,0 +1,10 @@
+docker container run -d -it --name bash_ex devopsdockeruh/exec_bash_exercise
+docker container exec -it bash_ex bash
+tail -f logs.txt
+
+Tue, 05 Jan 2021 14:09:27 GMT
+Tue, 05 Jan 2021 14:09:30 GMT
+Tue, 05 Jan 2021 14:09:33 GMT
+Tue, 05 Jan 2021 14:09:36 GMT
+Secret message is:
+"Docker is easy"
