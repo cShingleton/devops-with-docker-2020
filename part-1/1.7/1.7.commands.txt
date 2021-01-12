@@ -1,0 +1,3 @@
+docker container build -t curler .
+
+docker container run -it curler
