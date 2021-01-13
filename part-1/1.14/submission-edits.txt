@@ -1,0 +1,2 @@
+I added a JavaScript runtime using the 'therubyracer' gem in the project Gemfile on line 18 with:
+`gem 'therubyracer'`
