@@ -1,0 +1,21 @@
+version: '3.5'
+
+services:
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - 6379:6379
+  frontend-example-docker:
+    image: devopsdockeruh/frontend-example-docker
+    container_name: frontend-example-docker
+    ports: 
+      - 5000:5000
+  backend-example-docker:
+    image: devopsdockeruh/backend-example-docker
+    container_name: backend-example-docker
+    ports:
+      - 8000:8000
+    environment: 
+      - REDIS=redis
+      - REDIS_PORT=6379
