@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+  frontend-example-docker:
+    image: devopsdockeruh/frontend-example-docker
+    container_name: frontend-example-docker
+    ports: 
+      - 5000:5000
+  backend-example-docker:
+    image: devopsdockeruh/backend-example-docker
+    container_name: backend-example-docker
+    ports:
+      - 8000:8000
