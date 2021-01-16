@@ -1,0 +1,9 @@
+With the reverse proxy in place, the API_URL and FRONT_URL for the frontend and backend, respectively, would no longer be point to the correct ports on localhost.
+nginx-proxy is forwarding requests but the browser's requests on button click are from a different origin, not the internal network, so have to be re-routed through the nginx-proxy being served on localhost over port 80.
+
+To do this, I removed the environmental variables API_URL and FRONT_URL from the Dockerfiles and moved them to the docker-compose.yml - making them easier to configure in future, and their changes not being dependent on the images being rebuilt.
+I then set:
+- API_URL (in the frontend service) to be http://localhost:80/api/
+- FRONT_URL (in the backend service) to be http://localhost:80/
+
+I also removed any explicit port exposure/publication from the redis service and did not set the REDIS_PORT env var in the backend service, since they are oeprating on the same network and being proxied through nginx.
